@@ -8,7 +8,8 @@ import { LOGS_FILE, SHOW_MESSAGE_BUTTON_TITLE, SHOW_HTML_BUTTON_TITLE, SEND_BUTT
  */
 
 const logMessage = (action, user) => {
-  return `${dayjs().format('YYYY-MM-DD HH:mm:ss')} / ${action} / ${user.first_name} ${user.last_name} (id: ${user.id}, username: ${user.username})`;
+  return `
+${dayjs().format('YYYY-MM-DD HH:mm:ss')} / ${action} / ${user.first_name} ${user.last_name} (id: ${user.id}, username: ${user.username})`;
 };
 
 /**

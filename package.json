@@ -4,6 +4,7 @@
   "main": "index.js",
   "repository": "git@github.com:prosazhin/telegram-assistent-bot.git",
   "license": "MIT",
+  "author": "Евгений Сажин",
   "scripts": {
     "dev": "npx nodemon index.js",
     "create": "npx pm2 start index.js --name telegram-assistent-bot",
