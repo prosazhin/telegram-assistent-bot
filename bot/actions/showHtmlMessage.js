@@ -1,5 +1,5 @@
-import { saveLogMessage, read } from '../utils';
-import { MESSAGE_FILE } from '../consts';
+const { saveLogMessage, read } = require('../utils');
+const { MESSAGE_FILE } = require('../consts');
 
 /**
  * Показывает сообщение в формате HTML пользователю.
@@ -14,4 +14,4 @@ const showHtmlMessage = (bot) => {
   });
 };
 
-export default showHtmlMessage;
+module.exports = showHtmlMessage;

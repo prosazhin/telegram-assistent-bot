@@ -1,5 +1,5 @@
-import { saveLogMessage, startActionButtonsOptions, read } from '../utils';
-import { MESSAGE_FILE } from '../consts';
+const { saveLogMessage, startActionButtonsOptions, read } = require('../utils');
+const { MESSAGE_FILE } = require('../consts');
 
 /**
  * Отправляет пользователю
@@ -15,4 +15,4 @@ const showPrettyMessage = (bot) => {
   });
 };
 
-export default showPrettyMessage;
+module.exports = showPrettyMessage;

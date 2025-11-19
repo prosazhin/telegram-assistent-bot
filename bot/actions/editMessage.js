@@ -1,5 +1,5 @@
-import { saveLogMessage, saveActionButtonsOptions, write } from '../utils';
-import { SERVICE_FILE } from '../consts';
+const { saveLogMessage, saveActionButtonsOptions, write } = require('../utils');
+const { SERVICE_FILE } = require('../consts');
 
 /**
  * Следит за редактированием сообщений пользователя.
@@ -19,4 +19,4 @@ const editMessage = (bot) => {
   });
 };
 
-export default editMessage;
+module.exports = editMessage;

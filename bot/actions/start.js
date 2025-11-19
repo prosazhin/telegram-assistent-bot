@@ -1,5 +1,5 @@
-import { saveLogMessage, startActionButtonsOptions, read } from '../utils';
-import { HELLOW_FILE } from '../consts';
+const { saveLogMessage, startActionButtonsOptions, read } = require('../utils');
+const { HELLOW_FILE } = require('../consts');
 
 /**
  * /start
@@ -17,4 +17,4 @@ const start = (bot) => {
   });
 };
 
-export default start;
+module.exports = start;

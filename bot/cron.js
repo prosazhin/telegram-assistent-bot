@@ -1,7 +1,7 @@
-import cron from 'node-cron';
-import shell from 'shelljs';
-import { read } from './utils';
-import { CRON_VALUE_TIME, CRON_RESTART_TIME, CHAT_ID, MESSAGE_FILE } from './consts';
+const cron = require('node-cron');
+const shell = require('shelljs');
+const { read } = require('./utils');
+const { CRON_VALUE_TIME, CRON_RESTART_TIME, CHAT_ID, MESSAGE_FILE } = require('./consts');
 
 /**
  * Крон таска для отправки сообщения.
@@ -9,7 +9,7 @@ import { CRON_VALUE_TIME, CRON_RESTART_TIME, CHAT_ID, MESSAGE_FILE } from './con
  * 50 9 * * 1-5
  */
 
-export const cronSendMessage = (bot) => {
+const cronSendMessage = (bot) => {
   return cron.schedule(CRON_VALUE_TIME, () => {
     bot.telegram.sendMessage(CHAT_ID, read(MESSAGE_FILE), {
       parse_mode: 'HTML',
@@ -27,8 +27,13 @@ export const cronSendMessage = (bot) => {
  * 0 * * * *
  */
 
-export const cronRestart = () => {
+const cronRestart = () => {
   return cron.schedule(CRON_RESTART_TIME, () => {
     shell.exec('npm run restart');
   });
+};
+
+module.exports = {
+  cronSendMessage,
+  cronRestart,
 };

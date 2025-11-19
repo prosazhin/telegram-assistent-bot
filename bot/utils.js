@@ -1,7 +1,7 @@
-import fs from 'fs';
-import dayjs from 'dayjs';
+const fs = require('fs');
+const dayjs = require('dayjs');
 
-import { LOGS_FILE, SHOW_MESSAGE_BUTTON_TITLE, SHOW_HTML_BUTTON_TITLE, SEND_BUTTON_TITLE, REMOVE_BUTTON_TITLE, SAVE_BUTTON_TITLE } from './consts';
+const { LOGS_FILE, SHOW_MESSAGE_BUTTON_TITLE, SHOW_HTML_BUTTON_TITLE, SEND_BUTTON_TITLE, REMOVE_BUTTON_TITLE, SAVE_BUTTON_TITLE } = require('./consts');
 
 /**
  * Функция собирает сообщение для логов.
@@ -16,7 +16,7 @@ ${dayjs().format('YYYY-MM-DD HH:mm:ss')} / ${action} / ${user.first_name} ${user
  * Функция для сохранения лога.
  */
 
-export const saveLogMessage = (type, user) => {
+const saveLogMessage = (type, user) => {
   return fs.appendFileSync(LOGS_FILE, logMessage(type, user), 'utf8');
 };
 
@@ -24,7 +24,7 @@ export const saveLogMessage = (type, user) => {
  * Чтение файла.
  */
 
-export const read = (file) => {
+const read = (file) => {
   return fs.readFileSync(file, 'utf8');
 };
 
@@ -32,7 +32,7 @@ export const read = (file) => {
  * Запись файла.
  */
 
-export const write = (file, value) => {
+const write = (file, value) => {
   return fs.writeFileSync(file, value, 'utf8');
 };
 
@@ -40,7 +40,7 @@ export const write = (file, value) => {
  * Параметры для преобразования HTML в сообщении.
  */
 
-export const htmlPreviewOptions = {
+const htmlPreviewOptions = {
   parse_mode: 'HTML',
   disable_web_page_preview: true,
 };
@@ -50,7 +50,7 @@ export const htmlPreviewOptions = {
  * Плюс кнопки просмотра сообщения.
  */
 
-export const startActionButtonsOptions = {
+const startActionButtonsOptions = {
   parse_mode: 'HTML',
   disable_web_page_preview: true,
   reply_markup: {
@@ -69,7 +69,7 @@ export const startActionButtonsOptions = {
  * Плюс кнопки сохранения сообщения.
  */
 
-export const saveActionButtonsOptions = {
+const saveActionButtonsOptions = {
   parse_mode: 'HTML',
   disable_web_page_preview: true,
   reply_markup: {
@@ -80,4 +80,13 @@ export const saveActionButtonsOptions = {
       ],
     ],
   },
+};
+
+module.exports = {
+  saveLogMessage,
+  read,
+  write,
+  htmlPreviewOptions,
+  startActionButtonsOptions,
+  saveActionButtonsOptions,
 };

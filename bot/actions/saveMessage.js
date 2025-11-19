@@ -1,5 +1,5 @@
-import { saveLogMessage, startActionButtonsOptions, read, write } from '../utils';
-import { MESSAGE_FILE, SERVICE_FILE, FAIL_SAVE_MESSAGE, EMTY_MESSAGE, SUCCESS_SAVE_MESSAGE } from '../consts';
+const { saveLogMessage, startActionButtonsOptions, read, write } = require('../utils');
+const { MESSAGE_FILE, SERVICE_FILE, FAIL_SAVE_MESSAGE, EMTY_MESSAGE, SUCCESS_SAVE_MESSAGE } = require('../consts');
 
 /**
  * Сохраняет сообщение из временного файла
@@ -21,4 +21,4 @@ const saveMessage = (bot) => {
   });
 };
 
-export default saveMessage;
+module.exports = saveMessage;

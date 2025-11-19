@@ -1,5 +1,5 @@
-import { saveLogMessage, htmlPreviewOptions, read } from '../utils';
-import { CHAT_ID, MESSAGE_FILE, SEND_MESSAGE } from '../consts';
+const { saveLogMessage, htmlPreviewOptions, read } = require('../utils');
+const { CHAT_ID, MESSAGE_FILE, SEND_MESSAGE } = require('../consts');
 
 /**
  * Отправляет сообщение в чат.
@@ -15,4 +15,4 @@ const sendTestMessage = (bot) => {
   });
 };
 
-export default sendTestMessage;
+module.exports = sendTestMessage;

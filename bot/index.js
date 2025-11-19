@@ -1,14 +1,14 @@
-import { Telegraf } from 'telegraf';
-import start from './actions/start';
-import showPrettyMessage from './actions/showPrettyMessage';
-import showHtmlMessage from './actions/showHtmlMessage';
-import sendTestMessage from './actions/sendTestMessage';
-import saveMessage from './actions/saveMessage';
-import removeMessage from './actions/removeMessage';
-import watchMessage from './actions/watchMessage';
-import editMessage from './actions/editMessage';
-import { cronSendMessage, cronRestart } from './cron';
-import { BOT_API_TOKEN } from './consts';
+const { Telegraf } = require('telegraf');
+const start = require('./actions/start');
+const showPrettyMessage = require('./actions/showPrettyMessage');
+const showHtmlMessage = require('./actions/showHtmlMessage');
+const sendTestMessage = require('./actions/sendTestMessage');
+const saveMessage = require('./actions/saveMessage');
+const removeMessage = require('./actions/removeMessage');
+const watchMessage = require('./actions/watchMessage');
+const editMessage = require('./actions/editMessage');
+const { cronSendMessage, cronRestart } = require('./cron');
+const { BOT_API_TOKEN } = require('./consts');
 
 const bot = new Telegraf(BOT_API_TOKEN);
 
@@ -25,3 +25,5 @@ cronSendMessage(bot);
 cronRestart();
 
 bot.launch();
+
+module.exports = bot;

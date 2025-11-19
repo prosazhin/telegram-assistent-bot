@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://github.com/prosazhin/telegram-assistent-bot.git"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "dev": "npx nodemon index.js",
     "create": "npx pm2 start index.js --name telegram-assistent-bot",
@@ -24,13 +27,5 @@
     "node-cron": "^3.0.3",
     "shelljs": "^0.8.5",
     "telegraf": "^4.16.3"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-plugin-syntax-async-functions": "^6.13.0",
-    "babel-plugin-transform-async-to-generator": "^6.24.1",
-    "babel-preset-es2015-node": "^6.1.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "babel-register": "^6.26.0"
   }
 }

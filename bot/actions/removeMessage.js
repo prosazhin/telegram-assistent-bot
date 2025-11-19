@@ -1,5 +1,5 @@
-import { saveLogMessage, startActionButtonsOptions, read, write } from '../utils';
-import { SERVICE_FILE, FAIL_REMOVE_MESSAGE, EMTY_MESSAGE, SUCCESS_REMOVE_MESSAGE } from '../consts';
+const { saveLogMessage, startActionButtonsOptions, read, write } = require('../utils');
+const { SERVICE_FILE, FAIL_REMOVE_MESSAGE, EMTY_MESSAGE, SUCCESS_REMOVE_MESSAGE } = require('../consts');
 
 /**
  * Удаляет временные файлы.
@@ -19,4 +19,4 @@ const removeMessage = (bot) => {
   });
 };
 
-export default removeMessage;
+module.exports = removeMessage;
