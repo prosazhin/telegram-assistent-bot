@@ -10,7 +10,7 @@
     "url": "https://github.com/prosazhin/telegram-assistent-bot.git"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.22.0"
   },
   "scripts": {
     "dev": "npx nodemon index.js",
@@ -23,9 +23,9 @@
     "htop": "npx pm2 monit"
   },
   "dependencies": {
-    "dayjs": "^1.11.13",
-    "node-cron": "^3.0.3",
-    "shelljs": "^0.8.5",
+    "dayjs": "^1.11.19",
+    "node-cron": "^4.2.1",
+    "shelljs": "^0.10.0",
     "telegraf": "^4.16.3"
   }
 }
